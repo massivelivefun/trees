@@ -1,4 +1,4 @@
-# Trees
+# trees
 
 A simple test suite covering BFS, DFS, and max depth concepts.
 
