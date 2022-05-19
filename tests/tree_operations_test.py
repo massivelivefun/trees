@@ -1,4 +1,4 @@
-from src.trees.node import Node, A
+from src.trees.node import Node, T
 from src.trees.tree_operations import TreeOperations
 import types
 from typing import TypeVar
@@ -114,8 +114,8 @@ class TreeOperationTest(unittest.TestCase):
 
 
     def test_a_is_typedef_object(self) -> None:
-        self.assertIsInstance(A, TypeVar)
+        self.assertIsInstance(T, TypeVar)
 
 
     # def test_a_is_typedef_a_object(self) -> None:
-    #     self.assertEqual(A, TypeVar('A'))
+    #     self.assertEqual(T, TypeVar('T'))
