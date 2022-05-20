@@ -25,97 +25,74 @@ class TreeOperationTest(unittest.TestCase):
         # An instance of TreeOperations
         self.tree_op_class_instance = TreeOperations()
 
-
     def test_bfs_left_heavy(self) -> None:
         self.assertListEqual(
             TreeOperations.bfs(self.left_heavy_tree),
-            ['root', 'left', 'right', 'left2']
-        )
-
+            ['root', 'left', 'right', 'left2'])
 
     def test_bfs_right_heavy(self) -> None:
         self.assertListEqual(
             TreeOperations.bfs(self.right_heavy_tree),
-            ['root', 'left', 'right', 'right2']
-        )
-
+            ['root', 'left', 'right', 'right2'])
 
     def test_bfs_root(self) -> None:
         self.assertListEqual(
             TreeOperations.bfs(self.root_tree),
-            ['root']
-        )
-
+            ['root'])
 
     def test_bfs_none(self) -> None:
         self.assertListEqual(TreeOperations.bfs(None), [])
 
-
     def test_pre_order_left_heavy(self) -> None:
         self.assertListEqual(
             TreeOperations.pre_order(self.left_heavy_tree),
-            ['root', 'left', 'left2', 'right']
-        )
-
+            ['root', 'left', 'left2', 'right'])
 
     def test_pre_order_right_heavy(self) -> None:
         self.assertListEqual(
             TreeOperations.pre_order(self.right_heavy_tree),
-            ['root', 'left', 'right', 'right2']
-        )
-
+            ['root', 'left', 'right', 'right2'])
 
     def test_pre_order_root(self) -> None:
         self.assertListEqual(
             TreeOperations.pre_order(self.root_tree),
-            ['root']
-        )
-
+            ['root'])
 
     def test_pre_order_none(self) -> None:
         self.assertListEqual(TreeOperations.pre_order(None), [])
 
-
     def test_max_depth_left_heavy(self) -> None:
         self.assertEqual(TreeOperations.max_depth(self.left_heavy_tree), 3)
-
 
     def test_max_depth_right_heavy(self) -> None:
         self.assertEqual(TreeOperations.max_depth(self.right_heavy_tree), 3)
 
-
     def test_max_depth_root(self) -> None:
         self.assertEqual(TreeOperations.max_depth(self.root_tree), 1)
-
 
     def test_max_depth_none(self) -> None:
         self.assertEqual(TreeOperations.max_depth(None), 0)
 
-
     def test_bfs_is_static_method(self) -> None:
         self.assertIsInstance(
             self.tree_op_class_instance.bfs,
-            types.FunctionType
-        )
-
+            types.FunctionType)
 
     def test_pre_order_is_static_method(self) -> None:
         self.assertIsInstance(
             self.tree_op_class_instance.pre_order,
-            types.FunctionType
-        )
-
+            types.FunctionType)
 
     def test_max_depth_is_static_method(self) -> None:
         self.assertIsInstance(
             self.tree_op_class_instance.max_depth,
-            types.FunctionType
-        )
+            types.FunctionType)
 
-
-    def test_a_is_typedef_object(self) -> None:
+    def test_t_is_typedef_object(self) -> None:
         self.assertIsInstance(T, TypeVar)
 
+    def test_t_is_not_none(self) -> None:
+        self.assertNotEqual(T, None)
 
-    # def test_a_is_typedef_a_object(self) -> None:
-    #     self.assertEqual(T, TypeVar('T'))
+    def test_t_typedef_name_is_t(self) -> None:
+        self.assertEqual(T.__name__, 'T')
