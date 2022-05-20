@@ -1,6 +1,7 @@
 from typing import Generic, TypeVar
 
-T = TypeVar('T')
+T = TypeVar('T')  # pragma: no mutate
+
 
 class Node(Generic[T]):
     def __init__(self, contents: T, left: 'Node[T]', right: 'Node[T]'):
